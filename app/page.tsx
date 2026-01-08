@@ -1,30 +1,26 @@
 import { Button } from "@/components/ui/button";
-import { Instagram, Phone, Mail, Calendar, Users, MapPin } from "lucide-react";
-import { Marquee } from "@/components/ui/marquee";
-
-const images = new Array(7).fill("");
+import { Instagram, Phone, Mail } from "lucide-react";
+import Image from "next/image";
 
 export default function ComingSoonPage() {
   return (
     <main className="min-h-screen bg-background">
       {/* Hero Section */}
-      <section className="relative flex min-h-screen flex-col items-center justify-center px-4 py-20">
-        <div className="absolute inset-0 -z-10 opacity-5">
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_120%,oklch(0.55_0.08_45),transparent_50%)]" />
+      <section className="relative flex min-h-[55vh] flex-col items-center justify-center px-4 pb-8 pt-16">
+        <div className="grayscale-100">
+          <Image
+            src="/logo-eventos.webp"
+            className="w-[430px]"
+            alt="Logo"
+            width={500}
+            height={500}
+          />
         </div>
-
-        <div className="mx-auto max-w-4xl text-center">
+        <div className="mx-auto max-w-7xl text-center">
           {/* Main Heading */}
-          <h1 className="mb-6 font-serif text-5xl font-bold leading-tight tracking-tight text-foreground md:text-7xl lg:text-8xl text-balance">
-            Tu Evento Perfecto
-            <br />
-            Te Está Esperando
+          <h1 className="mb-6 font-serif text-5xl font-bold leading-tight tracking-tight text-foreground md:text-7xl text-balance">
+            Nos Estamos Renovando
           </h1>
-
-          <p className="mb-12 text-lg text-muted-foreground md:text-xl lg:text-2xl text-pretty max-w-2xl mx-auto">
-            Nuestro salón está listo para hacer realidad tu evento. Mientras
-            preparamos nuestra nueva web, seguimos recibiendo reservas.
-          </p>
 
           {/* Instagram Card  */}
 
@@ -52,7 +48,7 @@ export default function ComingSoonPage() {
             </Button>
           </div>
 
-          <div className="mx-auto mb-16 max-w-lg">
+          <div className="mx-auto mb-10 max-w-lg">
             <h3 className="mb-4 text-lg font-semibold text-foreground">
               ¿Listo para reservar tu evento?
             </h3>
@@ -78,7 +74,11 @@ export default function ComingSoonPage() {
                 variant="outline"
                 className="h-12 border-2 bg-transparent"
               >
-                <a href="mailto:comercial@distritobarracas.com">
+                <a
+                  rel="noopener noreferrer"
+                  target="_blank"
+                  href="mailto:comercial@distritobarracas.com"
+                >
                   <Mail className="mr-2 h-5 w-5" />
                   Email
                 </a>
