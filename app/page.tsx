@@ -1,65 +1,110 @@
-import Image from "next/image";
+import { Button } from "@/components/ui/button";
+import { Instagram, Phone, Mail, Calendar, Users, MapPin } from "lucide-react";
+import { Marquee } from "@/components/ui/marquee";
 
-export default function Home() {
+const images = new Array(7).fill("");
+
+export default function ComingSoonPage() {
   return (
-    <div className="flex min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex min-h-screen w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
+    <main className="min-h-screen bg-background">
+      {/* Hero Section */}
+      <section className="relative flex min-h-screen flex-col items-center justify-center px-4 py-20">
+        <div className="absolute inset-0 -z-10 opacity-5">
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_120%,oklch(0.55_0.08_45),transparent_50%)]" />
+        </div>
+
+        <div className="mx-auto max-w-4xl text-center">
+          {/* Main Heading */}
+          <h1 className="mb-6 font-serif text-5xl font-bold leading-tight tracking-tight text-foreground md:text-7xl lg:text-8xl text-balance">
+            Tu Evento Perfecto
+            <br />
+            Te Está Esperando
           </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
+
+          <p className="mb-12 text-lg text-muted-foreground md:text-xl lg:text-2xl text-pretty max-w-2xl mx-auto">
+            Nuestro salón está listo para hacer realidad tu evento. Mientras
+            preparamos nuestra nueva web, seguimos recibiendo reservas.
+          </p>
+
+          {/* Instagram Card  */}
+
+          <div className="mx-auto mb-8 relative max-w-lg rounded-2xl border-2 border-primary bg-card p-8">
+            <Instagram className="mx-auto mb-4 h-12 w-12 text-primary" />
+            <h2 className="mb-3 font-serif text-2xl font-bold text-foreground">
+              Visita Nuestro Instagram
+            </h2>
+            <p className="mb-6 text-muted-foreground">
+              Más de 10,000 seguidores nos eligen. Descubre fotos reales de
+              nuestros eventos y espacios.
+            </p>
+            <Button
+              asChild
+              size="lg"
+              className="w-full max-w-max h-12 bg-primary text-primary-foreground hover:bg-primary/90 font-semibold"
             >
-              Templates
-            </a>{" "}
-            or the{" "}
+              <a
+                href="https://www.instagram.com/distritobarracaseventos/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                @distritobarracaseventos
+              </a>
+            </Button>
+          </div>
+
+          <div className="mx-auto mb-16 max-w-lg">
+            <h3 className="mb-4 text-lg font-semibold text-foreground">
+              ¿Listo para reservar tu evento?
+            </h3>
+            <div className="grid gap-3 sm:grid-cols-2">
+              <Button
+                asChild
+                size="lg"
+                variant="outline"
+                className="h-12 border-2 bg-transparent"
+              >
+                <a
+                  href="https://wa.me/541135141717"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <Phone className="mr-2 h-5 w-5" />
+                  WhatsApp
+                </a>
+              </Button>
+              <Button
+                asChild
+                size="lg"
+                variant="outline"
+                className="h-12 border-2 bg-transparent"
+              >
+                <a href="mailto:comercial@distritobarracas.com">
+                  <Mail className="mr-2 h-5 w-5" />
+                  Email
+                </a>
+              </Button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Footer */}
+      <footer className="border-t border-border py-12">
+        <div className="mx-auto max-w-5xl px-4 text-center">
+          <p className="text-sm text-muted-foreground">
+            © 2026 Distrito Barracas Eventos. Sitio web en construcción.
+          </p>
+          <p className="mt-2 text-xs text-muted-foreground">
+            ¿Preguntas? Contáctanos:{" "}
             <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
+              href="mailto:comercial@distritobarracas.com"
+              className="text-primary hover:underline"
             >
-              Learning
-            </a>{" "}
-            center.
+              comercial@distritobarracas.com
+            </a>
           </p>
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
-      </main>
-    </div>
+      </footer>
+    </main>
   );
 }
