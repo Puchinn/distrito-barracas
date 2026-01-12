@@ -6,9 +6,6 @@ const nextConfig: NextConfig = {
   images: {
     unoptimized: true,
   },
-
-  basePath: "/distrito-barracas",
-  assetPrefix: "/distrito-barracas/",
 };
 
 export default nextConfig;
